@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+        <div>
+            <h2 class="text-white bg-dark text-centre p-3">Insert Student Details</h2>
+            <br>
+            <form action="/save" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Enter Student Name" required>
+                </div>
+
+                 <div class="form-group">
+                    <input type="text" class="form-control mt-2" name="email" placeholder="Enter Student email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control mt-2" name="age" placeholder="Enter Student age" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control mt-2" name="location" placeholder="Enter Student location" required>
+                </div>
+
+                <div class="form-group">
+                    <select name="gender" id="gender" class="form-control mt-2" required>
+                        <option selected>select Gender...</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2 mt-2">
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </div>
+            </form>
+</div>
+
+
+        </div>
+{% endblock %}
